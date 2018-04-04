@@ -16,9 +16,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TeamsScreen" />
-        <activity android:name=".Clue" />
-        <activity android:name=".Quiz"></activity>
-    </application>
+        <activity android:name=".TeamsScreen">
+            <intent-filter>
+                <action android:name="edu.utep.cs.cs4330.sudoku.TeamsScreen" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".StudentClue">
+            <intent-filter>
+                <action android:name="edu.utep.cs.cs4330.sudoku.StudentCllue" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".StudentQuiz">
+            <intent-filter>
+                <action android:name="edu.utep.cs.cs4330.sudoku.StudentQuiz" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>    </application>
 
 </manifest>
