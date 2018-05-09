@@ -6,13 +6,25 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class StudentClue extends AppCompatActivity {
+    private Student student;
+    public String clue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clue);
+        TextView c = findViewById(R.id.clueText);
+        c.setText(clue);
+
+    }
+
+    public void setStudent(Student student){
+        this.student=student;
     }
 
     public void okClicked(View view){

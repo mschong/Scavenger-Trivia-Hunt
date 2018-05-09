@@ -9,16 +9,32 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class StudentQuiz extends AppCompatActivity {
+    private Student student;
+    public String question;
+    public String answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+        TextView q = findViewById(R.id.questionText);
+        EditText a = findViewById(R.id.answerText);
+        q.setText(question);
+        if(a.getText().equals(answer)){
+            student.setScore(student.getScore()+1);
+        }
 
+
+    }
+
+    public void setStudent(Student student){
+        this.student=student;
     }
 
 
