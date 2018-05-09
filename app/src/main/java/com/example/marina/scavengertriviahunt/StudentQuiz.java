@@ -15,28 +15,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class StudentQuiz extends AppCompatActivity {
-    private Student student;
-    public String question;
-    public String answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        TextView q = findViewById(R.id.questionText);
-        EditText a = findViewById(R.id.answerText);
-        q.setText(question);
-        if(a.getText().equals(answer)){
-            student.setScore(student.getScore()+1);
-        }
-
 
     }
-
-    public void setStudent(Student student){
-        this.student=student;
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

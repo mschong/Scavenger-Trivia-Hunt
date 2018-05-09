@@ -11,26 +11,15 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class StudentClue extends AppCompatActivity {
-    private Student student;
-    public String clue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clue);
-        TextView c = findViewById(R.id.clueText);
-        c.setText(clue);
 
     }
 
-    public void setStudent(Student student){
-        this.student=student;
-    }
-
-    public void okClicked(View view){
-        Intent i = new Intent(this, Password.class);
-        startActivity(i);
-    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
