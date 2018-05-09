@@ -8,8 +8,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class TeacherQuiz extends AppCompatActivity {
-    private Teacher teacher;
-    EditText clue, password, question, answer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +16,4 @@ public class TeacherQuiz extends AppCompatActivity {
 
     }
 
-    public void setTeacher(Teacher teacher){
-        this.teacher = teacher;
-    }
 }
