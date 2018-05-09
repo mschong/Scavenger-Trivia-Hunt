@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.marina.scavengertriviahunt">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,13 +16,6 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".TeamsScreen">
-            <intent-filter>
-                <action android:name="edu.utep.cs.cs4330.sudoku.TeamsScreen" />
-
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".StudentClue">
@@ -39,7 +34,6 @@
         </activity>
         <activity android:name=".Password" />
         <activity android:name=".ScoreScreen" />
-        <activity android:name=".TeacherSetup" />
         <activity android:name=".TeacherQuiz"></activity>
     </application>
 
