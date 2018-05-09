@@ -15,7 +15,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class StudentQuiz extends AppCompatActivity {
+    private Student student;
 
+    public void setStudent(Student student) {
+        this.student = student;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

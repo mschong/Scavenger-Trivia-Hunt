@@ -1,5 +1,6 @@
 package com.example.marina.scavengertriviahunt;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonWriter;
@@ -43,6 +44,10 @@ public class TeacherQuiz extends AppCompatActivity{
 
                 quizQuestion = new Question(clueText,passwordText,questionText,answerText);
                 jsonUtils.writeQuestion(quizQuestion);
+                clue.setText("");
+                password.setText("");
+                question.setText("");
+                answer.setText("");
 
             }
         });
@@ -52,10 +57,12 @@ public class TeacherQuiz extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 jsonUtils.closeJson();
+                finish();
             }
         });
 
 
     }
+
 
 }
