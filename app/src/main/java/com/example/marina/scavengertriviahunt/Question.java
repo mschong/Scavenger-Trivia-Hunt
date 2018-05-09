@@ -1,6 +1,8 @@
 package com.example.marina.scavengertriviahunt;
 
-public class Question {
+import java.io.Serializable;
+
+public class Question implements Serializable {
     private String clue;
     private String password;
     private String question;

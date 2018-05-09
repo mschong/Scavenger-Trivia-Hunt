@@ -24,13 +24,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void studentClicked(View view){
         Student student = new Student();
-        StudentClue sc = new StudentClue();
         student.setQuiz(jsonUtils.readQuestionArray());
-        sc.setStudent(student);
-        if(student.getQuiz()==null){
+        if(student.getTotalQuestions()==0){
             Toast.makeText(this, "No quiz available", Toast.LENGTH_SHORT).show();
         } else {
             Intent i = new Intent(this, StudentClue.class);
+            i.putExtra("Student", student);
             startActivity(i);
         }
     }

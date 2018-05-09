@@ -1,9 +1,11 @@
 package com.example.marina.scavengertriviahunt;
 
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable{
     private Question[] quiz;
-    private int score=0, questionNumber =0;
+    private int score=0, questionNumber =0, totalQuestions = 0;
 
     public Student(){
 
@@ -19,6 +21,7 @@ public class Student {
 
     public void setQuiz(Question[] quiz) {
         this.quiz = quiz;
+        this.totalQuestions = quiz.length;
     }
 
     public int getScore() {
@@ -33,5 +36,7 @@ public class Student {
         return questionNumber;
     }
 
-
+    public int getTotalQuestions() {
+        return totalQuestions;
+    }
 }

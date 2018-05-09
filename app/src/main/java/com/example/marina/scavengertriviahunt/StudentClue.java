@@ -17,16 +17,13 @@ public class StudentClue extends AppCompatActivity {
     private Student student;
     private String password="";
 
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clue);
+        Intent i = getIntent();
+        student =(Student) i.getSerializableExtra("Student");
         Question question = student.getQuiz()[student.getQuestionNumber()];
-        student.setQuestionNumber(student.getQuestionNumber()+1);
         TextView clueText = findViewById(R.id.clueText);
         final EditText passwordText = findViewById(R.id.passwordEdit);
         clueText.setText(question.getClue());
@@ -38,8 +35,7 @@ public class StudentClue extends AppCompatActivity {
             public void onClick(View view) {
                 if(passwordText.getText().toString().equals(password)){
                     Intent i = new Intent(StudentClue.this, StudentQuiz.class);
-                    StudentQuiz sq = new StudentQuiz();
-                    sq.setStudent(student);
+                    i.putExtra("Student", student);
                     startActivity(i);
                 }else{
                     Toast.makeText(StudentClue.this, "Incorrect password", Toast.LENGTH_SHORT).show();
@@ -67,6 +63,7 @@ public class StudentClue extends AppCompatActivity {
         }
         else if(id == R.id.scoreButton){
             Intent i = new Intent(this, ScoreScreen.class);
+            i.putExtra("Student", student);
             startActivity(i);
         }
         return super.onOptionsItemSelected(item);
